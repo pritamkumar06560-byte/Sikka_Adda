@@ -1,0 +1,39 @@
+from telegram.ext import Updater, CommandHandler
+import time
+
+TOKEN = "8030650064:AAGZFpfK4_ZB5aMQz6HSz8RvqdphR6-KKB8"
+ADMIN_ID = 123456789  # apna telegram numeric id
+
+START_TIME = 1700000000
+DAYS_LIMIT = 10
+
+def expired():
+    return time.time() > START_TIME + (DAYS_LIMIT * 86400)
+
+def start(update, context):
+    if expired():
+        update.message.reply_text("⛔ Bot campaign end ho chuka hai.")
+        return
+    update.message.reply_text(
+        "Welcome 👋\n"
+        "10 din ka Refer & Earn Bot\n\n"
+        "/balance – Balance dekho"
+    )
+
+def balance(update, context):
+    if expired():
+        update.message.reply_text("⛔ Campaign over.")
+        return
+    update.message.reply_text("Your balance: 0 coins")
+
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("balance", balance))
+
+    updater.start_polling()
+    updater.idle()
+
+main()
