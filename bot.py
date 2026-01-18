@@ -1,7 +1,8 @@
 from telegram.ext import Updater, CommandHandler
 import time
+import os
 
-TOKEN = "8030650064:AAFQbsp1DqvS98e4ptstNdItB3dYyo7IPFE"
+TOKEN = os.getenv("8030650064:AAFQbsp1DqvS98e4ptstNdItB3dYyo7IPFE") 
 ADMIN_ID = 7801717222  # apna telegram numeric id
 
 START_TIME = 1768754187
