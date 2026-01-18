@@ -1,10 +1,10 @@
 from telegram.ext import Updater, CommandHandler
 import time
 
-TOKEN = "8030650064:AAGZFpfK4_ZB5aMQz6HSz8RvqdphR6-KKB8"
-ADMIN_ID = 123456789  # apna telegram numeric id
+TOKEN = "8030650064:AAFQbsp1DqvS98e4ptstNdItB3dYyo7IPFE"
+ADMIN_ID = 7801717222  # apna telegram numeric id
 
-START_TIME = 1700000000
+START_TIME = 1768754187
 DAYS_LIMIT = 10
 
 def expired():
